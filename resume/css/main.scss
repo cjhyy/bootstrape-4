@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Righteous|Roboto+Condensed|Ubuntu');
+*{
+    font-family: 'Times New Roman', Times, serif
+  }
+  @function rem($value){
+    @return unquote(($value/1px)/16+"rem")
+}
+$black:#0b090c;
+$yellow:#dda908;
+$white:#ffffff;
+body{
+    background-color: $white;
+}
+aside{
+    background-color: $yellow;
+}
+main{
+   background-color: $black;
+}
+.noBullets{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+.socialLinks{
+    li{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      a{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          outline: 0;
+      }
+    }
+    .icon{
+        height: 40px;
+        width: 40px;
+        border: 1px solid $black;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        color: #dda908;
+        background-color: $black;
+        border-radius: 500px;
+        outline: 0;
+        &:hover{
+            background-color: lighten($black,5%)
+        }
+    }
+}
+.email a{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: $black;
+   &:hover{
+       color: lighten($black, 10%)
+   }
+}
+.bottomSection{
+    .name{
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        color: $black;
+        margin-bottom: 20px;
+        position: relative;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.25)
+    }
+}
+.profileImage{
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    padding:10px;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba($yellow,0.25);
+    }
+    img{
+        height: 400px;
+        // filter: grayscale(50%);
+        margin: auto;
+    }
+}
+.timeline{
+    .block{
+        color: $yellow;
+        position: relative;
+        padding: 10px 0;
+     
+        &:not(:last-child){
+            border-bottom: 1px solid darken($yellow,36%);
+            &::before{
+                content: '';
+                position: absolute;
+                top: 46px;
+                bottom: 0;
+                left: -1.5rem;
+                margin: auto;
+                height: 100%;
+                width: 2px;
+                background-color: $yellow;
+            }
+        }
+        .peosk{
+            font-size: 18px;
+            margin-right: 30px;
+            color: #066093;
+        }
+        .skill{
+            height: 17px;
+            background: #d65cb0;
+            margin-bottom: 0.7em;
+            -webkit-transition: width 2s;
+            transition: width 2s;
+        }
+        .skill::after{
+            width: 100%;
+            height: 17px;
+            background: #0670ad;
+            display: block;
+            content: '';
+            position: absolute;
+            z-index: -1;
+        }
+    }
+    .heading{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        position: relative;
+        &::before{
+            content:'';
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            background-color: $yellow;
+            border-radius: 500px;
+            top: 12px;
+            left: -28px;
+        }
+
+    }
+    .subheading{
+        font-size: 16px;
+        font-weight: normal;
+        margin: 10px auto 2px;
+        position: relative;
+        &::before{
+            content: '';
+height: 8px;
+width: 8px;
+box-sizing: border-box;
+background-color: $black;
+border-radius: 500px;
+border: 1px solid $yellow;
+top: 8px;
+left: -27px;
+position: absolute;
+        }
+
+   
+    }
+    
+}
+
+@media (min-width:992px){
+    .profileWrapper{
+        aside{
+            position:fixed;
+            top:0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 400px;
+        }
+        main{
+            padding: 20px;
+            margin-left: 400px;
+            width: 100%;
+        }
+    }
+}
